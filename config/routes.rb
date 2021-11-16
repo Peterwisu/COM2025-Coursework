@@ -13,5 +13,8 @@ Rails.application.routes.draw do
   get 'playlist', to: 'home#playlist'
   get 'table', to: 'home#table'
   get 'contact', to: 'home#contact'
+
+
+ 
   
 end

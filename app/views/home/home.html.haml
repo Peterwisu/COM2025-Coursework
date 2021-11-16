@@ -1,2 +1,84 @@
-%h1 Home#home
-%p Find me in app/views/home/home.html.haml
+
+.jumbotron.text-center
+  %h1 Welcome to SUBCULTURE MUSIC 
+  %h5  This is a website for people who love a culture of a rock music.This website share and contains a playlist of a various types of rock song created a by people who have a same taste of music. 
+
+.container-fluid
+  .row
+    .col-sm-4
+      %h3 What does Subculture means?
+      %p Lorem ipsum dolor..
+    .col-sm-4
+      %h3 About Us
+      %p Lorem ipsum dolor..
+    .col-sm-4
+      %h3 Contact Us
+      %p Lorem ipsum dolor..
+
+.container
+  .mySlides
+    .numbertext 1 / 6
+    %img{:src => asset_path('blues.jpg'), :style => "width:100%"}/
+  .mySlides
+    .numbertext 2 / 6
+    %img{:src => asset_path('metal.jpg'), :style => "width:100%"}/
+  .mySlides
+    .numbertext 3 / 6
+    %img{:src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
+  .mySlides
+    .numbertext 4 / 6
+    %img{:src => asset_path('alternative.jpg'), :style => "width:100%"}/
+  .mySlides
+    .numbertext 5 / 6
+    %img{:src => asset_path('punk.jpg'), :style => "width:100%"}/
+  .mySlides
+    .numbertext 6 / 6
+    %img{:src => asset_path('progressive.jpg'), :style => "width:100%"}/
+  %a.prev{:onclick => "plusSlides(-1)"} ❮
+  %a.next{:onclick => "plusSlides(1)"} ❯
+  .caption-container
+    %p#caption
+  .row
+    .column
+      %img.demo.cursor{:alt => "Blues Rock", :onclick => "currentSlide(1)", :src => asset_path('blues.jpg'), :style => "width:100%"}/
+    .column
+      %img.demo.cursor{:alt => "Heavy Metal", :onclick => "currentSlide(2)", :src => asset_path('metal.jpg'), :style => "width:100%"}/
+    .column
+      %img.demo.cursor{:alt => "Classic Rock", :onclick => "currentSlide(3)", :src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
+    .column
+      %img.demo.cursor{:alt => "Alternative Rock", :onclick => "currentSlide(4)", :src => asset_path('alternative.jpg'), :style => "width:100%"}/
+    .column
+      %img.demo.cursor{:alt => "Punk Rock", :onclick => "currentSlide(5)", :src => asset_path('punk.jpg'), :style => "width:100%"}/
+    .column
+      %img.demo.cursor{:alt => "Progressive Rock", :onclick => "currentSlide(6)", :src => asset_path('progressive.jpg'), :style => "width:100%"}/
+:javascript
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  
+  function plusSlides(n) {
+    showSlides(slideIndex += n);
+  }
+  
+  function currentSlide(n) {
+    showSlides(slideIndex = n);
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    var captionText = document.getElementById("caption");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+    captionText.innerHTML = dots[slideIndex-1].alt;
+  }
+
+  
