@@ -39,8 +39,11 @@ nav.navbar.navbar-inverse{
  }
 
  body {
+  
+  /*background-image: url('bg.jpg');background-repeat: no-repeat;background-size: cover;
+ */
  
-  background-color: #FFFFFF ;
+  background-color: #1d1d1d ;
 
   padding-bottom: 150px;
 }
