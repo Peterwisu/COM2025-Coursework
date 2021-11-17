@@ -1,81 +1,82 @@
-.jumbotron.text-center
-  %h1 Welcome to SUBCULTURE MUSIC 
-  %p This is a webiste for people who love and interesting in Rock music.This site contains and shared various song and playlist of a rock artist from all over the world.
-
-.container
-  .mySlides
-    .numbertext 1 / 6
-    %img{:src => asset_path('blues.jpg'), :style => "width:100%"}/
-  .mySlides
-    .numbertext 2 / 6
-    %img{:src => asset_path('metal.jpg'), :style => "width:100%"}/
-  .mySlides
-    .numbertext 3 / 6
-    %img{:src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
-  .mySlides
-    .numbertext 4 / 6
-    %img{:src => asset_path('alternative.jpg'), :style => "width:100%"}/
-  .mySlides
-    .numbertext 5 / 6
-    %img{:src => asset_path('punk.jpg'), :style => "width:100%"}/
-  .mySlides
-    .numbertext 6 / 6
-    %img{:src => asset_path('progressive.jpg'), :style => "width:100%"}/
-  %a.prev{:onclick => "plusSlides(-1)"} ❮
-  %a.next{:onclick => "plusSlides(1)"} ❯
-  .caption-container
-    %p#caption
-  .row
-    .column
-      %img.demo.cursor{:alt => "Blues Rock", :onclick => "currentSlide(1)", :src => asset_path('blues.jpg'), :style => "width:100%"}/
-    .column
-      %img.demo.cursor{:alt => "Heavy Metal", :onclick => "currentSlide(2)", :src => asset_path('metal.jpg'), :style => "width:100%"}/
-    .column
-      %img.demo.cursor{:alt => "Classic Rock", :onclick => "currentSlide(3)", :src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
-    .column
-      %img.demo.cursor{:alt => "Alternative Rock", :onclick => "currentSlide(4)", :src => asset_path('alternative.jpg'), :style => "width:100%"}/
-    .column
-      %img.demo.cursor{:alt => "Puck Rock", :onclick => "currentSlide(5)", :src => asset_path('punk.jpg'), :style => "width:100%"}/
-    .column
-      %img.demo.cursor{:alt => "Progressive Rock", :onclick => "currentSlide(6)", :src => asset_path('progressive.jpg'), :style => "width:100%"}/
-:javascript
-  var slideIndex = 1;
-  showSlides(slideIndex);
-  
-  function plusSlides(n) {
-    showSlides(slideIndex += n);
-  }
-  
-  function currentSlide(n) {
-    showSlides(slideIndex = n);
-  }
-  
-  function showSlides(n) {
-    var i;
-    var slides = document.getElementsByClassName("mySlides");
-    var dots = document.getElementsByClassName("demo");
-    var captionText = document.getElementById("caption");
-    if (n > slides.length) {slideIndex = 1}
-    if (n < 1) {slideIndex = slides.length}
-    for (i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";
+%body{:style => "background-image: url('bg.jpg');background-repeat: no-repeat;background-size: cover;"}
+ 
+  .jumbotron.text-center
+    %h1=t('.title') 
+    %p=t('.description') 
+  .container
+    .mySlides
+      .numbertext 1 / 6
+      %img{:src => asset_path('blues.jpg'), :style => "width:100%"}/
+    .mySlides
+      .numbertext 2 / 6
+      %img{:src => asset_path('metal.jpg'), :style => "width:100%"}/
+    .mySlides
+      .numbertext 3 / 6
+      %img{:src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
+    .mySlides
+      .numbertext 4 / 6
+      %img{:src => asset_path('alternative.jpg'), :style => "width:100%"}/
+    .mySlides
+      .numbertext 5 / 6
+      %img{:src => asset_path('punk.jpg'), :style => "width:100%"}/
+    .mySlides
+      .numbertext 6 / 6
+      %img{:src => asset_path('progressive.jpg'), :style => "width:100%"}/
+    %a.prev{:onclick => "plusSlides(-1)"} ❮
+    %a.next{:onclick => "plusSlides(1)"} ❯
+    .caption-container
+      %p#caption
+    .row
+      .column
+        %img.demo.cursor{:alt => "Blues Rock", :onclick => "currentSlide(1)", :src => asset_path('blues.jpg'), :style => "width:100%"}/
+      .column
+        %img.demo.cursor{:alt => "Heavy Metal", :onclick => "currentSlide(2)", :src => asset_path('metal.jpg'), :style => "width:100%"}/
+      .column
+        %img.demo.cursor{:alt => "Classic Rock", :onclick => "currentSlide(3)", :src => asset_path('classic_rock.jpg'), :style => "width:100%"}/
+      .column
+        %img.demo.cursor{:alt => "Alternative Rock", :onclick => "currentSlide(4)", :src => asset_path('alternative.jpg'), :style => "width:100%"}/
+      .column
+        %img.demo.cursor{:alt => "Puck Rock", :onclick => "currentSlide(5)", :src => asset_path('punk.jpg'), :style => "width:100%"}/
+      .column
+        %img.demo.cursor{:alt => "Progressive Rock", :onclick => "currentSlide(6)", :src => asset_path('progressive.jpg'), :style => "width:100%"}/
+  :javascript
+    var slideIndex = 1;
+    showSlides(slideIndex);
+    
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
     }
-    for (i = 0; i < dots.length; i++) {
-        dots[i].className = dots[i].className.replace(" active", "");
+    
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
     }
-    slides[slideIndex-1].style.display = "block";
-    dots[slideIndex-1].className += " active";
-    captionText.innerHTML = dots[slideIndex-1].alt;
-  }
+    
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) {slideIndex = 1}
+      if (n < 1) {slideIndex = slides.length}
+      for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+          dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex-1].style.display = "block";
+      dots[slideIndex-1].className += " active";
+      captionText.innerHTML = dots[slideIndex-1].alt;
+    }
 
-.container-fluid
-  .row
-    .col-sm-4
-      %h3{:style => "text-align: center;"} what is Sub-Culture?
-      %p Lorem ipsum dolor..
-    .col-sm-4
-      %h3{:style => "text-align: center;"} About Us
-      %p Lorem ipsum dolor..
-    .col-sm-4
-      %h3{:style => "text-align: center;"} Contact
-      %p Lorem ipsum dolor..
+  .container-fluid{:style => "background-color: #FFFFFF ;"}
+    .row
+      .col-sm-4
+        %h3{:style => "text-align: center;"} What is Sub-Culture?
+        %p details
+      .col-sm-4
+        %h3{:style => "text-align: center;"} About Us
+        %p Details
+      .col-sm-4
+        %h3{:style => "text-align: center;"} Contact
+        %p details

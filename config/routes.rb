@@ -15,10 +15,12 @@ Rails.application.routes.draw do
 
   root 'home#home'
   get 'playlist', to: 'home#playlist'
-  get 'song', to: 'home#song'
+  get 'addsong', to: 'home#song'
   get 'contact', to: 'home#contact'
   get 'artist', to: 'home#artist'
 
+
+  post 'request_contact', to: 'home#request_contact'
 
  
   
