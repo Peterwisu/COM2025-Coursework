@@ -6,13 +6,18 @@ class HomeControllerTest < ActionDispatch::IntegrationTest
     assert_response :success
   end
 
+  test "should get song" do
+    get home_song_url
+    assert_response :success
+  end
+
   test "should get playlist" do
     get home_playlist_url
     assert_response :success
   end
 
-  test "should get table" do
-    get home_table_url
+  test "should get artist" do
+    get home_artist_url
     assert_response :success
   end
 

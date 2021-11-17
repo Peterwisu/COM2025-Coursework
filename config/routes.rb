@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
 
-  
-
+  resources :songs
+  get 'home/home'
+  get 'home/song'
+  get 'home/playlist'
+  get 'home/artist'
+  get 'home/contact'
   get 'home/home'
   get 'home/playlist'
   get 'home/table'
@@ -11,8 +15,9 @@ Rails.application.routes.draw do
 
   root 'home#home'
   get 'playlist', to: 'home#playlist'
-  get 'table', to: 'home#table'
+  get 'song', to: 'home#song'
   get 'contact', to: 'home#contact'
+  get 'artist', to: 'home#artist'
 
 
  

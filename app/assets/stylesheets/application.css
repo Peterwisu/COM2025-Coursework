@@ -38,7 +38,9 @@ nav.navbar.navbar-inverse{
 
  }
 
-
+ body {
+  padding-bottom: 150px;
+}
  
 
  /*images*/

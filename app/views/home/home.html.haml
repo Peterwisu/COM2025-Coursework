@@ -1,19 +1,6 @@
-
 .jumbotron.text-center
   %h1 Welcome to SUBCULTURE MUSIC 
-  %h5  This is a website for people who love a culture of a rock music.This website share and contains a playlist of a various types of rock song created a by people who have a same taste of music. 
-
-.container-fluid
-  .row
-    .col-sm-4
-      %h3 What does Subculture means?
-      %p Lorem ipsum dolor..
-    .col-sm-4
-      %h3 About Us
-      %p Lorem ipsum dolor..
-    .col-sm-4
-      %h3 Contact Us
-      %p Lorem ipsum dolor..
+  %p This is a webiste for people who love and interesting in Rock music.This site contains and shared various song and playlist of a rock artist from all over the world.
 
 .container
   .mySlides
@@ -48,7 +35,7 @@
     .column
       %img.demo.cursor{:alt => "Alternative Rock", :onclick => "currentSlide(4)", :src => asset_path('alternative.jpg'), :style => "width:100%"}/
     .column
-      %img.demo.cursor{:alt => "Punk Rock", :onclick => "currentSlide(5)", :src => asset_path('punk.jpg'), :style => "width:100%"}/
+      %img.demo.cursor{:alt => "Puck Rock", :onclick => "currentSlide(5)", :src => asset_path('punk.jpg'), :style => "width:100%"}/
     .column
       %img.demo.cursor{:alt => "Progressive Rock", :onclick => "currentSlide(6)", :src => asset_path('progressive.jpg'), :style => "width:100%"}/
 :javascript
@@ -81,4 +68,14 @@
     captionText.innerHTML = dots[slideIndex-1].alt;
   }
 
-  
+.container-fluid
+  .row
+    .col-sm-4
+      %h3{:style => "text-align: center;"} what is Sub-Culture?
+      %p Lorem ipsum dolor..
+    .col-sm-4
+      %h3{:style => "text-align: center;"} About Us
+      %p Lorem ipsum dolor..
+    .col-sm-4
+      %h3{:style => "text-align: center;"} Contact
+      %p Lorem ipsum dolor..
