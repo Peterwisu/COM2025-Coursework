@@ -2,7 +2,6 @@ Rails.application.routes.draw do
 
 
   resources :artists
-  resources :songs
   get 'home/home'
   get 'home/song'
   get 'home/playlist'
