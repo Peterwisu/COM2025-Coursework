@@ -4,6 +4,7 @@ class HomeController < ApplicationController
 
   def song
     @song = Song.new
+    @songs = Song.all
     
   end
 
@@ -12,6 +13,8 @@ class HomeController < ApplicationController
   end
 
   def artist
+    @artist = Artist.new
+    @artists = Artist.all
   end
 
   def contact

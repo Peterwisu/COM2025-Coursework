@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+
+try = Artist.where(name: 'nirvana',genres: 'alternative',country: 'USA', active: '1987-12-10').first
+try.delete if try
+
+artist = Artist.create(name: 'nirvana',genres: 'alternative',country: 'USA', active: '1987-12-10')
