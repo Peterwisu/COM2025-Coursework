@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_18_023427) do
+ActiveRecord::Schema.define(version: 2021_11_18_223030) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 2021_11_18_023427) do
     t.date "active", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
   create_table "songs", force: :cascade do |t|
