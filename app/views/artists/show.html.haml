@@ -13,6 +13,8 @@
   %b Active:
   = @artist.active
 
+%p= link_to 'Add Song', new_song_path(artist_id: @artist)
+
 = link_to 'Edit', edit_artist_path(@artist)
 \|
 = link_to 'Back', artists_path

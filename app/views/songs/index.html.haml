@@ -14,7 +14,7 @@
   %tbody
     - @songs.each do |song|
       %tr
-        %td= song.artist
+        %td= song.artist.name
         %td= song.name
         %td= song.album
         %td= song.duration

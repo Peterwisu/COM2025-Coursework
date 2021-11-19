@@ -12,7 +12,7 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_song_url
+    get new_song_url, params: {song: { artist_id: @artist.id}}
     assert_response :success
   end
 

@@ -1,6 +1,6 @@
 class SongsController < ApplicationController
   before_action :set_song, only: %i[ show edit update destroy ]
-
+  before_action :set_artist, only: [:new, :create]
   # GET /songs or /songs.json
   def index
     @songs = Song.all
@@ -12,7 +12,7 @@ class SongsController < ApplicationController
 
   # GET /songs/new
   def new
-    @song = Song.new
+    @song = @artist.songs.new
   end
 
   # GET /songs/1/edit
@@ -21,7 +21,7 @@ class SongsController < ApplicationController
 
   # POST /songs or /songs.json
   def create
-    @song = Song.new(song_params)
+    @song = @artist.songs.new(song_params)
 
     respond_to do |format|
       if @song.save
@@ -61,6 +61,10 @@ class SongsController < ApplicationController
     def set_song
       @song = Song.find(params[:id])
     end
+    def set_artist
+      @artist = Artist.find_by(id: params[:artist_id]) ||Artist.find(song_params[:artist_id])
+    end
+    
 
     # Only allow a list of trusted parameters through.
     def song_params
