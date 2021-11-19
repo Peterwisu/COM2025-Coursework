@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  resources :songs
   resources :artists
   get 'home/home'
   get 'home/song'

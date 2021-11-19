@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  artist: one
   name: MyString1
-  genres: MyString1
-  country: MyString1
-  active: 2021-11-18
+  album: MyString1
+  duration: 9.99
 
 two:
+  artist: two
   name: MyString2
-  genres: MyString2
-  country: MyString2
-  active: 2020-11-18
+  album: MyString2
+  duration: 9.99
