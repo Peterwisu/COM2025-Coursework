@@ -11,8 +11,8 @@ class HomeController < ApplicationController
   end
 
   def playlist
-    @playlist = Playlist.new
-    @playlist = Playlist.all
+    @playlists = Playlist.new
+    @playlists = Playlist.all
     @list_song = ListSong.all
     @list_song = ListSong.new
   end

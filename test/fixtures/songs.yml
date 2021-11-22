@@ -5,9 +5,11 @@ one:
   name: MyString1
   album: MyString1
   duration: 9.99
+ 
 
 two:
   artist: two
   name: MyString2
   album: MyString2
-  duration: 9.99
+  duration: 9.4
+  

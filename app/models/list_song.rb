@@ -1,4 +1,6 @@
 class ListSong < ApplicationRecord
-  belongs_to :playlist
-  belongs_to :song
+  belongs_to :playlist 
+  belongs_to :song 
+  validates  :song , :playlist ,presence: true
+  
 end
