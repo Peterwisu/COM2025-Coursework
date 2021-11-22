@@ -1,0 +1,23 @@
+%h1 Listing list_songs
+
+%table
+  %thead
+    %tr
+      %th Playlist
+      %th Song
+      %th
+      %th
+      %th
+
+  %tbody
+    - @list_songs.each do |list_song|
+      %tr
+        %td= list_song.playlist
+        %td= list_song.song.name
+        %td= link_to 'Show', list_song
+        %td= link_to 'Edit', edit_list_song_path(list_song)
+        %td= link_to 'Destroy', list_song, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New List song', new_list_song_path

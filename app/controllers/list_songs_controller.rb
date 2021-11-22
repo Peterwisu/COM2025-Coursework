@@ -1,0 +1,75 @@
+class ListSongsController < ApplicationController
+  before_action :set_list_song, only: %i[ show edit update destroy ]
+  before_action :set_playlist, only: [:create]
+  # GET /list_songs or /list_songs.json
+  def index
+    @list_songs = ListSong.all
+  end
+
+  # GET /list_songs/1 or /list_songs/1.json
+  def show
+  end
+
+  # GET /list_songs/new
+  def new
+    @list_song = ListSong.new
+  end
+
+  # GET /list_songs/1/edit
+  def edit
+  end
+
+  # POST /list_songs or /list_songs.json
+  def create
+    song = Song.find(params[:song_id])
+    @list_song = @playlist.list_songs.build(song: song)
+
+    respond_to do |format|
+      if @list_song.save
+        format.html { redirect_to @list_song.song, notice: "List song was successfully created." }
+        format.json { render :show, status: :created, location: @list_song }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @list_song.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # PATCH/PUT /list_songs/1 or /list_songs/1.json
+  def update
+    respond_to do |format|
+      if @list_song.update(list_song_params)
+        format.html { redirect_to @list_song, notice: "List song was successfully updated." }
+        format.json { render :show, status: :ok, location: @list_song }
+      else
+        format.html { render :edit, status: :unprocessable_entity }
+        format.json { render json: @list_song.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  # DELETE /list_songs/1 or /list_songs/1.json
+  def destroy
+    @list_song.destroy
+    respond_to do |format|
+      format.html { redirect_to list_songs_url, notice: "List song was successfully destroyed." }
+      format.json { head :no_content }
+    end
+  end
+
+  private
+    # Use callbacks to share common setup or constraints between actions.
+    def set_list_song
+      @list_song = ListSong.find(params[:id])
+    end
+    def set_playlist
+      @playlist = Playlist.find(session[:playlist_id])
+      rescue ActiveRecord::RecordNotFound
+      @playlist = Playlist.create
+      session[:playlist_id] = @playlist.id
+      end
+    # Only allow a list of trusted parameters through.
+    def list_song_params
+      params.require(:list_song).permit(:playlist_id, :song_id)
+    end
+end

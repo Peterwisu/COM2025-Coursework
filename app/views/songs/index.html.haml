@@ -21,7 +21,12 @@
         %td= link_to 'Show', song
         %td= link_to 'Edit', edit_song_path(song)
         %td= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= button_to 'Add to Playlist',addsongtolist_path(song_id: song)
+
+        
 
 %br
 
 = link_to 'New Song', new_song_path
+
+

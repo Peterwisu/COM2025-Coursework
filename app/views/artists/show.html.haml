@@ -18,3 +18,14 @@
 = link_to 'Edit', edit_artist_path(@artist)
 \|
 = link_to 'Back', artists_path
+
+
+%p Songs:
+%table
+  %tbody
+    - @artist.songs.each do |song|
+      %tr
+        %td= song.name  
+        %td= link_to 'Show', song
+        %td= link_to 'Edit', edit_song_path(song)
+        %td= link_to 'Destroy', song , :method => :delete, :data => { :confirm => 'Are you sure?' }

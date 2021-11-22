@@ -5,11 +5,16 @@ class HomeController < ApplicationController
   def song
     @song = Song.new
     @songs = Song.all
+    @list_song = ListSong.all
+    @list_song = ListSong.new
     
   end
 
   def playlist
-    
+    @playlist = Playlist.new
+    @playlist = Playlist.all
+    @list_song = ListSong.all
+    @list_song = ListSong.new
   end
 
   def artist

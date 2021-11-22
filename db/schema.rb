@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_11_19_012715) do
+ActiveRecord::Schema.define(version: 2021_11_21_114048) do
 
   create_table "artists", force: :cascade do |t|
     t.string "name", null: false
@@ -22,6 +22,32 @@ ActiveRecord::Schema.define(version: 2021_11_19_012715) do
     t.index ["name"], name: "index_artists_on_name", unique: true
   end
 
+  create_table "list_songs", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_list_songs_on_playlist_id"
+    t.index ["song_id"], name: "index_list_songs_on_song_id"
+  end
+
+  create_table "playlist_songs", force: :cascade do |t|
+    t.integer "playlist_id"
+    t.integer "song_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["playlist_id"], name: "index_playlist_songs_on_playlist_id"
+    t.index ["song_id"], name: "index_playlist_songs_on_song_id"
+  end
+
+  create_table "playlists", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "created_by", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_playlists_on_name", unique: true
+  end
+
   create_table "songs", force: :cascade do |t|
     t.integer "artist_id", null: false
     t.string "name", null: false
@@ -30,6 +56,7 @@ ActiveRecord::Schema.define(version: 2021_11_19_012715) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["artist_id"], name: "index_songs_on_artist_id"
+    t.index ["name", "artist_id"], name: "index_Songs_on_name_and_artist_id", unique: true
   end
 
 end

@@ -18,13 +18,13 @@
     - @songs.each do |song|
       %tr
         %td= song.name
-        %td= song.artist
+        %td= song.artist.name
         %td= song.album
         %td= song.duration
         %td= link_to 'Show', song
         %td= link_to 'Edit', edit_song_path(song)
         %td= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }
-
+        %td= button_to 'Add to Playlist', addsongtolist_path(song_id:song)
 
 %br
 %br

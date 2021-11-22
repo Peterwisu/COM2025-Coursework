@@ -1,0 +1,12 @@
+%p#notice= notice
+
+%p
+  %b Playlist:
+  = @list_song.playlist
+%p
+  %b Song:
+  = @list_song.song
+
+= link_to 'Edit', edit_list_song_path(@list_song)
+\|
+= link_to 'Back', list_songs_path
