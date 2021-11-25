@@ -1,6 +1,6 @@
 class PlaylistsController < ApplicationController
   before_action :set_playlist, only: %i[ show edit update destroy ]
-
+  before_action :authenticate_user!
   # GET /playlists or /playlists.json
   def index
     

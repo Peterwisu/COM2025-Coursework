@@ -1,6 +1,7 @@
 class ListSongsController < ApplicationController
   before_action :set_list_song, only: %i[ show edit update destroy ]
   before_action :set_song , only: [:new, :create]
+  before_action :authenticate_user!
   # GET /list_songs or /list_songs.json
   def index
     @list_songs = ListSong.all
