@@ -16,16 +16,44 @@
 
  @import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css');
 
+ @import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+ 
+ body::before {
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.7), 
+    rgba(0, 0, 0, 0.7)
+  ), url('bg2.jpg') no-repeat center center fixed;
+  content: '';
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  position:absolute; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  -webkit-filter: blur(1px);
+  -moz-filter: blur(1px);
+  -o-filter: blur(1px);
+  -ms-filter: blur(1px);
+  filter: blur(1px);
+} body {
+  font-family: 'Outfit', sans-serif;
+  color: white;
+  height: 100%; 
+  padding-bottom: 150px;
+}
+td{
+  font-family: 'Outfit', sans-serif;
+}
 
  li.navbarheader {
-
   font-size: 1.3em;
   height: 2.0em;
-
  }
 
  li.navbarheader:hover {
-    background-color: rgb(20, 19, 19);
+    
     cursor:  pointer;
     font-size: 1.9em;
     height: 2.5em;
@@ -33,113 +61,21 @@
    }
 
 nav.navbar.navbar-inverse{
-
-    background-color: black;
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;
 
  }
 
- body {
-  
-  /*background-image: url('bg.jpg');background-repeat: no-repeat;background-size: cover;
- */
+ table.table-dark{
+  background-color: transparent;
+  background: transparent;
+  border-color: transparent;;
+ }
+
+ .jumbotron{
+   background-color: transparent;
+ }
+
+
  
-  background-color: #ffffff ;
-
-  padding-bottom: 150px;
-}
- 
-
- /*images*/
-
-
-* {
-  box-sizing: border-box;
-}
-
-img {
-  vertical-align: middle;
-}
-
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
-
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
-
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 40%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
-
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
-
-.active,
-.demo:hover {
-  opacity: 1;
-}
- /*images*/

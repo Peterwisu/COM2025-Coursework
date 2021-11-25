@@ -2,10 +2,10 @@
 
 %p
   %b Playlist:
-  = @list_song.playlist
+  = @list_song.playlist.name
 %p
   %b Song:
-  = @list_song.song
+  = @list_song.song.id
 
 = link_to 'Edit', edit_list_song_path(@list_song)
 \|

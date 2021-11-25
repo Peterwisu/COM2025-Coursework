@@ -3,6 +3,8 @@ require 'test_helper'
 class ListSongsControllerTest < ActionDispatch::IntegrationTest
   setup do
     @list_song = list_songs(:one)
+    @song   = songs(:one)
+    @playlist = playlists(:one)
   end
 
   test "should get index" do
@@ -11,13 +13,13 @@ class ListSongsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get new" do
-    get new_list_song_url
+    get new_list_song_url, params: {list_song: {playlist_id: @playlist.id, song_id:@song.id}}
     assert_response :success
   end
 
   test "should create list_song" do
     assert_difference('ListSong.count') do
-      post list_songs_url, params: { list_song: { playlist_id: @list_song.playlist_id, song_id: @list_song.song_id } }
+      post list_songs_url, params: { list_song: { playlist_id: @playlist.id, song_id:@song.id } }
     end
 
     assert_redirected_to list_song_url(ListSong.last)
@@ -34,7 +36,7 @@ class ListSongsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update list_song" do
-    patch list_song_url(@list_song), params: { list_song: { playlist_id: @list_song.playlist_id, song_id: @list_song.song_id } }
+    patch list_song_url(@list_song), params: { list_song: { playlist_id: @playlist.id, song_id: @song.id } }
     assert_redirected_to list_song_url(@list_song)
   end
 

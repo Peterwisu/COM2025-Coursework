@@ -1,29 +1,34 @@
-%h1 Listing songs
+.container.bg-light
+  .col-md-12.text-center
+    %h1 Song
 
-%table
-  %thead
-    %tr
-      %th Artist
-      %th Name
-      %th Album
-      %th Duration
-      %th
-      %th
-      %th
+.container.bg-light
+  .col-md-12.text-left
 
-  %tbody
-    - @songs.each do |song|
-      %tr
-        %td= song.artist.name
-        %td= song.name
-        %td= song.album
-        %td= song.duration
-        %td= link_to 'Show', song
-        %td= link_to 'Edit', edit_song_path(song)
-        %td= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }
-        %td= button_to 'Add to Playlist',addsongtolist_path(song_id: song)
+    %table.table.table-dark
+      %thead
+        %tr
+          %th Artist
+          %th Name
+          %th Album
+          %th Duration
+          %th
+          %th
+          %th
 
-        
+      %tbody
+        - @songs.each do | song|
+          %tr
+            %td= song.artist.name
+            %td= song.name
+            %td= song.album
+            %td= song.duration
+            %td= link_to 'Details', song, style: "color: white;"
+            %td= link_to 'Edit', edit_song_path(song),style: "color: white;"
+            %td= link_to 'Delete', song, method: :delete, data: { confirm: 'Are you sure?' },style: "color: white;"
+            %td= link_to 'Add to Playlist',new_list_song_path(song_id: song),style: "color: white;"
+
+          
 
 %br
 

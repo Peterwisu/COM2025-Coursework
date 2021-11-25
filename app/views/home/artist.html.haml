@@ -5,7 +5,7 @@
 
 .container-fluid
   
-  %table.table.table-striped.table-hover
+  %table.table.table-dark
     %thead
       %tr
         %th Name
@@ -15,7 +15,7 @@
     %tbody
     - @artists.each do |artist|
       %tr
-        %td= artist.name
+        %td= artist.name 
         %td= artist.genres
         %td= artist.country
         %td= artist.active

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :list_songs
   resources :list_songs 
   resources :playlists
   resources :songs
@@ -10,14 +11,15 @@ Rails.application.routes.draw do
 
   #for home pages
   root 'home#home'
-  get 'song_all_add', to: 'home#song'
-  get 'artist_all_add', to: 'home#artist'
+  get 'song', to: 'home#song'
+  get 'artist', to: 'home#artist'
   get 'contact', to: 'home#contact'
-  get 'playlist_all_add', to: 'home#playlist'
+  get 'playlist', to: 'home#playlist'
   post 'request_contact', to: 'home#request_contact'
-
+  get 'mailsend', to: "home#mailsend"
   #for add song to playlist
-  post 'addsongtolist', to: 'list_songs#create'
+  
+
   
 
 

@@ -1,7 +1,16 @@
-%h1 Editing song
-
+.container.bg-light
+    .col-md-10.text-center
+        %h1 Edting Song Details
+%br
+%br
 = render 'form'
 
-= link_to 'Show', @song
-\|
-= link_to 'Back', songs_path
+
+
+.container.bg-light
+    .col-md-10.text-center
+
+       
+
+        %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => songs_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Back
+

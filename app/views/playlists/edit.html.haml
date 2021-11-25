@@ -1,7 +1,16 @@
-%h1 Editing playlist
-
+.container.bg-light
+    .col-md-10.text-center
+        %h1 Edit Playlist Details
+%br
+%br
 = render 'form'
 
-= link_to 'Show', @playlist
-\|
-= link_to 'Back', playlists_path
+
+
+.container.bg-light
+    .col-md-10.text-center
+
+        
+
+        %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => playlists_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Back
+

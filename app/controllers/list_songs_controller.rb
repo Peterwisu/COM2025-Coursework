@@ -1,6 +1,6 @@
 class ListSongsController < ApplicationController
   before_action :set_list_song, only: %i[ show edit update destroy ]
-  before_action :set_playlist, only: [:create]
+  before_action :set_song , only: [:new, :create]
   # GET /list_songs or /list_songs.json
   def index
     @list_songs = ListSong.all
@@ -12,7 +12,7 @@ class ListSongsController < ApplicationController
 
   # GET /list_songs/new
   def new
-    @list_song = ListSong.new
+    @list_song = @song.list_song.new
   end
 
   # GET /list_songs/1/edit
@@ -21,12 +21,11 @@ class ListSongsController < ApplicationController
 
   # POST /list_songs or /list_songs.json
   def create
-    song = Song.find(params[:song_id])
-    @list_song = @playlist.list_songs.build(song: song)
+    @list_song = @song.list_song.new(list_song_params)
 
     respond_to do |format|
       if @list_song.save
-        format.html { redirect_to @list_song.song, notice: "List song was successfully created." }
+        format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "List song was successfully created." }
         format.json { render :show, status: :created, location: @list_song }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -62,12 +61,11 @@ class ListSongsController < ApplicationController
     def set_list_song
       @list_song = ListSong.find(params[:id])
     end
-    def set_playlist
-      @playlist = Playlist.find(session[:playlist_id])
-      rescue ActiveRecord::RecordNotFound
-      @playlist = Playlist.create
-      session[:playlist_id] = @playlist.id
-      end
+
+    def set_song
+      @song = Song.find_by(id: params[:song_id])||Song.find(list_song_params[:song_id])
+    end
+
     # Only allow a list of trusted parameters through.
     def list_song_params
       params.require(:list_song).permit(:playlist_id, :song_id)

@@ -1,38 +1,45 @@
 %p#notice= notice
+.container.bg-light
+  .col-md-10.text-center
+    %p
+      
+      %h1= @playlist.name
+    %p
+      %b Created by:
+      = @playlist.created_by
 
-%p
-  %b Name:
-  = @playlist.name
-%p
-  %b Created by:
-  = @playlist.created_by
+
+.container.bg-light
+  .col-md-10.text-left
+    %h4{style: "text-align: left;"} Songs:
+    %table.table.table-dark
+      %thead
+        %tr
+          %th Artist
+          %th Name
+          %th Album
+          %th Duration
+          
+          
+          
+
+      %tbody
+        - @playlist.list_song.each do |list|
+          - @songs.each  do |song| 
+            - if list.song_id == song.id
+              %tr
+                %td= song.artist.name
+                %td= song.name
+                %td= song.album
+                %td= song.duration
+          
 
 
+.container.bg-light
+  .col-md-10.text-center
 
-%p Songs:
-%table
-  %thead
-    %tr
-      %th Artist
-      %th Name
-      %th Album
-      %th Duration
-      %th
-      %th
-      %th
+    
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href =>  edit_playlist_path(@playlist), :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Edit
 
-  %tbody
-    - @playlist.list_songs.each do |list|
-      - @songs.each  do |song| 
-        - if list.song_id == song.id
-          %tr
-            %td= song.artist.name
-            %td= song.name
-            %td= song.album
-            %td= song.duration
-       
-= link_to 'Edit', edit_playlist_path(edit_playlist_path)
-
-= link_to 'Back', playlists_path
-
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => playlists_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Back
 

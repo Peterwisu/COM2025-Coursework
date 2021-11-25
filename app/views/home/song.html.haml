@@ -7,7 +7,7 @@
 
 .container-fluid
   
-  %table.table.table-striped.table-hover
+  %table.table.table-dark
     %thead
       %tr
         %th Name
@@ -24,7 +24,9 @@
         %td= link_to 'Show', song
         %td= link_to 'Edit', edit_song_path(song)
         %td= link_to 'Destroy', song, method: :delete, data: { confirm: 'Are you sure?' }
-        %td= button_to 'Add to Playlist', addsongtolist_path(song_id:song)
+        %td= link_to 'Add to Playlist', new_list_song_path(song_id: song.id)
+          
+        
 
 %br
 %br

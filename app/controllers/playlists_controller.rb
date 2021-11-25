@@ -10,6 +10,7 @@ class PlaylistsController < ApplicationController
   # GET /playlists/1 or /playlists/1.json
   def show
     @songs = Song.all
+    
       
   end
 
@@ -61,13 +62,13 @@ class PlaylistsController < ApplicationController
 
   
 
-
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_playlist
       @playlist = Playlist.find(params[:id])
     end
 
+    
 
     # Only allow a list of trusted parameters through.
     def playlist_params

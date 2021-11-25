@@ -15,11 +15,14 @@ class HomeController < ApplicationController
     @playlists = Playlist.all
     @list_song = ListSong.all
     @list_song = ListSong.new
+   
+    
   end
 
   def artist
     @artist = Artist.new
     @artists = Artist.all
+    
   end
 
   def contact
@@ -36,7 +39,7 @@ class HomeController < ApplicationController
       MailerContactMailer.contact_email(email, name, telephone, message).deliver_now
       flash[:notice] = I18n.t('home.request_contact.email_sent')
     end
-    redirect_to root_path
+    redirect_to mailsend_path
     end
 
 end

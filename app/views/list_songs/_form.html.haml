@@ -1,17 +1,23 @@
-= form_for @list_song do |f|
+
+
+
+= form_for @list_song, :html => {:class => "form-horizontal center"} do |f|
   - if @list_song.errors.any?
     #error_explanation
-      %h2= "#{pluralize(@list_song.errors.count, "error")} prohibited this list_song from being saved:"
+      %h2= "#{pluralize(@list_song.errors.count, "error")} prohibited this artist from being saved:"
       %ul
         - @list_song.errors.full_messages.each do |message|
           %li= message
-
-  .field
-    = f.label :playlist
-    
-    = f.text_field :playlist
-  .field
-    = f.label :song
-    = f.text_field :song
-  .actions
-    = f.submit 'Save'
+  .form-group
+    = f.label :playlist, "Playlist Name:", class: "col-md-4 control-label"
+    .col-md-3
+      = f.collection_select :playlist_id, Playlist.all, :id, :name, {}, class: "form-control"
+  
+  .form-group
+    = f.label :song, "Song:", class: "col-md-4 control-label"
+    .col-md-3
+      %p=@list_song.song.name
+      = f.hidden_field :song_id, value: @list_song.song.id
+  .container.bg-light
+    .col-md-6.text-center
+      = f.submit "Save", class: "btn btn-default btn-primary" ,style: " border: none; background-color: #000000 ; color: #FFFFFF;"

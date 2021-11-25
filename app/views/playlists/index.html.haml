@@ -1,26 +1,35 @@
-%h1 Listing playlists
+%p#notice= notice
+.container.bg-light
+  .col-md-12.text-center
+    %h1 Playlist
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Created by
-      %th
-      %th
-      %th
+.container.bg-light
+  .col-md-10.text-left
+  
+    %table.table.table-dark
+      %thead
+        %tr
+          %th Name
+          %th Created by
+          %th
+          %th
+          %th
 
-  %tbody
-    - @playlists.each do |playlist|
-      %tr
-        %td= playlist.name
-        %td= playlist.created_by
-        %td= link_to 'Show', playlist
-        %td= link_to 'Edit', edit_playlist_path(playlist)
-        %td= link_to 'Destroy', playlist, method: :delete, data: { confirm: 'Are you sure?' }
+      %tbody
+        - @playlists.each do |playlist|
+          %tr
+            %td= playlist.name
+            %td= playlist.created_by
+            
+            %td= link_to 'Details', playlist,style: "color: white;"
+            %td= link_to 'Edit', edit_playlist_path(playlist),style: "color: white;"
+            %td= link_to 'Delete', playlist, method: :delete, data: { confirm: 'Are you sure?' },style: "color: white;"
+          
         
-       
 
         
 %br
 
-= link_to 'New Playlist', new_playlist_path
+.container
+  .col-md-12.text-center
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => new_playlist_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} New Playlist
