@@ -22,7 +22,7 @@ class ListSongsControllerTest < ActionDispatch::IntegrationTest
       post list_songs_url, params: { list_song: { playlist_id: @playlist.id, song_id:@song.id } }
     end
 
-    assert_redirected_to list_song_url(ListSong.last)
+    assert_redirected_to  playlist_path(ListSong.last.playlist_id)
   end
 
   test "should show list_song" do

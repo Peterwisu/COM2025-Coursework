@@ -21,7 +21,7 @@ class SongsControllerTest < ActionDispatch::IntegrationTest
       post songs_url, params: { song: { album: @song.album, artist_id: @artist.id, duration: @song.duration, name: @song.name+ ' create'  } }
     end
 
-    assert_redirected_to song_url(Song.last)
+    assert_redirected_to artist_path(Song.last.artist)
   end
 
   test "should show song" do
