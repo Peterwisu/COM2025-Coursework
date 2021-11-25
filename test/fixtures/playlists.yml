@@ -1,11 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user: one
   name: playlist1
   created_by: creator1
   
 
 two:
+  user: two
   name: playlist2
   created_by: Mcreator2
   

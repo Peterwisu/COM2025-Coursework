@@ -1,10 +1,13 @@
 require 'test_helper'
 
 class ListSongsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @list_song = list_songs(:one)
     @song   = songs(:one)
     @playlist = playlists(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

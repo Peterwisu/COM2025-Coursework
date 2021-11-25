@@ -1,9 +1,12 @@
 require 'test_helper'
 
 class SongsControllerTest < ActionDispatch::IntegrationTest
+  include Devise::Test::IntegrationHelpers
   setup do
     @song = songs(:one)
     @artist =artists(:one)
+    @user = users(:one)
+    sign_in @user
   end
 
   test "should get index" do

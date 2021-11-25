@@ -4,10 +4,12 @@ class PlaylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-
+  setup do
+    @user = users(:one)
+    end
   
 
-  test'should not save empty song ' do
+  test'should not save empty playlist ' do
 
     my_playlist =Playlist.new
     my_playlist.save
@@ -16,11 +18,12 @@ class PlaylistTest < ActiveSupport::TestCase
   end
 
 
-  test'save valid song ' do
+  test'save valid playlist ' do
 
     my_playlist =Playlist.new
     my_playlist.name = 'My Playlist'
     my_playlist.created_by = 'By me'
+    my_playlist.user = @user
     my_playlist.save
 
     assert my_playlist.valid?
@@ -31,11 +34,13 @@ class PlaylistTest < ActiveSupport::TestCase
     my_playlist1 =Playlist.new
     my_playlist1.name = 'My Playlist'
     my_playlist1.created_by = 'By me'
+    my_playlist1.user = @user
     my_playlist1.save
 
     my_playlist2 =Playlist.new
     my_playlist2.name = 'My Playlist'
     my_playlist2.created_by = 'By me'
+    my_playlist2.user = @user
     my_playlist2.save
 
     refute my_playlist2.valid?
