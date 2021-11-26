@@ -32,11 +32,11 @@
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  -webkit-filter: blur(0.5px);
-  -moz-filter: blur(0.5px);
-  -o-filter: blur(0.5px);
-  -ms-filter: blur(0.5px);
-  filter: blur(0.5px);
+  -webkit-filter: blur(0px);
+  -moz-filter: blur(0px);
+  -o-filter: blur(0px);
+  -ms-filter: blur(0px);
+  filter: blur(0px);
 } body {
   font-family: 'Outfit', sans-serif;
   color: white;

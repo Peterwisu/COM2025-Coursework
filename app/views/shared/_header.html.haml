@@ -14,29 +14,31 @@
         %span.icon-bar
       %a.navbar-brand{:href => "/",style: "color: white;"} SUBCULTURE MUSIC
     #myNavbar.collapse.navbar-collapse
-      %ul.nav.navbar-nav.navbar-right
+      %ul.nav.navbar-nav.navbar-left
         %li.navbarheader
-          %a{:href => "artist",style: "color: white;"} Artists      
+          %a{:href => "artists",style: "color: white;"} Artists      
         %li.navbarheader
-          %a{:href => "song",style: "color: white;"} Songs
+          %a{:href => "songs",style: "color: white;"} Songs
         %li.navbarheader
-          %a{:href => "playlist",style: "color: white;"} Playlists
+          %a{:href => "playlists",style: "color: white;"} Playlists
         %li.navbarheader
           %a{:href => "contact",style: "color: white;"} Contact
+    
+      %ul.nav.navbar-nav.navbar-right
+        - if user_signed_in?
+          %li.navbarheader
+            %h4{style: " padding-top: 5px  "}="#{current_user.email}" 
+          %li.navbarheader  
+            %a{:href => edit_user_registration_path,style: "color: white;"}Profile  
+          %li.navbarheader
+            = link_to t('logout'), destroy_user_session_path, method: 'delete',style: "color: white;"
+        - else
+          %li.navbarheader
+            %a{:href => new_user_session_path,style: "color: white;"} Login
+          %li.navbarheader
+            %a{:href => new_user_registration_path,style: "color: white;"}Sign Up
+  
 
 
 
-%nav
-- if user_signed_in?
-  = "#{current_user.email} |"
-  = link_to t('profile'), edit_user_registration_path
-  = '|'
-  = link_to t('logout'), destroy_user_session_path, method: 'delete'
-- else
-  = link_to t('login'), new_user_session_path
-  = '|'
-  = link_to t('sign_up'), new_user_registration_path
-
-- flash.each do |key, value|
-  = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
 

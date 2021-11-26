@@ -4,6 +4,10 @@ class ArtistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+
+  setup do
+    @user = users(:one)
+    end
   test 'empty can not be save' do
     my_artist= Artist.new
     my_artist.save
@@ -17,6 +21,7 @@ class ArtistTest < ActiveSupport::TestCase
     my_artist.genres = 'heavy metal'
     my_artist.country = 'UK'
     my_artist.active = '2006-02-01'
+    my_artist.user =@user
     my_artist.save
 
     assert my_artist.valid?

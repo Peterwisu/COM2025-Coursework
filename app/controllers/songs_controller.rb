@@ -4,9 +4,8 @@ class SongsController < ApplicationController
   before_action :authenticate_user!
   # GET /songs or /songs.json
   def index
-    @songs = Song.all
-    @list_song = ListSong.all
-    @list_song = ListSong.new
+    
+    @songs = Song.user_songs(current_user)
   end
 
   # GET /songs/1 or /songs/1.json

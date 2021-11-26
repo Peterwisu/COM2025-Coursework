@@ -1,12 +1,14 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
+  user: one
   name: MyString1
   genres: MyString1
   country: MyString1
   active: 2021-11-18
 
 two:
+  user: two
   name: MyString2
   genres: MyString2
   country: MyString2

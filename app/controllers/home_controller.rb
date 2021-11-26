@@ -23,6 +23,7 @@ class HomeController < ApplicationController
     @artist = Artist.new
     @artists = Artist.all
     
+    
   end
 
   def contact
