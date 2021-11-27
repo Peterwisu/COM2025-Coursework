@@ -9,7 +9,7 @@ class PlaylistTest < ActiveSupport::TestCase
     end
   
 
-  test'should not save empty playlist ' do
+  test'Should not save empty playlist ' do
 
     my_playlist =Playlist.new
     my_playlist.save
@@ -18,7 +18,7 @@ class PlaylistTest < ActiveSupport::TestCase
   end
 
 
-  test'save valid playlist ' do
+  test'Save valid playlist ' do
 
     my_playlist =Playlist.new
     my_playlist.name = 'My Playlist'
@@ -29,7 +29,7 @@ class PlaylistTest < ActiveSupport::TestCase
     assert my_playlist.valid?
     
   end
-  test 'duplicate should not save' do
+  test 'Duplicate playlist should not save' do
 
     my_playlist1 =Playlist.new
     my_playlist1.name = 'My Playlist'

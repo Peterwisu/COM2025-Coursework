@@ -9,7 +9,7 @@ class SongTest < ActiveSupport::TestCase
     @artist = artists(:one)
   end
 
-  test'should not save empty song ' do
+  test'Should not save empty song ' do
 
     my_song = Song.new
     my_song.save
@@ -18,7 +18,7 @@ class SongTest < ActiveSupport::TestCase
   end
 
 
-  test'save valid song ' do
+  test'Save valid song ' do
 
     my_song = Song.new
     my_song.name = 'School'
@@ -31,7 +31,7 @@ class SongTest < ActiveSupport::TestCase
     
   end
 
-  test 'duplicate should not be save' do
+  test 'Duplicate song should not be save' do
     my_song1 = Song.new
     my_song1.name = 'School'
     my_song1.artist = @artist

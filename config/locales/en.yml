@@ -56,4 +56,20 @@ en:
       
     request_contact:
       no_email: You must supply an email address
-      email_sent: Thank you. We will be in touch shortly.
+      email_sent: Thank you for your. We will be in touch shortly.
+  
+      
+  playlists:
+    index: 
+      title: Get Start
+      description: Create your own playlist,add your favourite artist and add song to the playlist
+  
+  artists:
+    index:
+      title: Add a Song from your favourite Artists
+      description: If an Artist does not exist in the list below you can add an Artist by click a button below
+  
+  songs:
+    index:
+      title: Add song to your Playlists
+      description: If a song does not exist in the list below you can add a new Song by click a button below

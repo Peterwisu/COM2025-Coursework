@@ -1,14 +1,15 @@
 .container.bg-light
-    .col-md-10.text-center
+    .col-md-12.text-center
         %h1 Enter Playlist Details
 %br
 %br
-= render 'form'
+.formholder
+    = render 'form'
 
 
 
 .container.bg-light
-    .col-md-10.text-center
+    .col-md-12.text-center
 
         %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => playlists_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Back
 

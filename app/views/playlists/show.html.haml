@@ -1,6 +1,6 @@
 
 .container.bg-light
-  .col-md-10.text-center
+  .col-md-12.text-center
     %p
       
       %h1= @playlist.name
@@ -10,7 +10,7 @@
 
 
 .container.bg-light
-  .col-md-10.text-left
+  .col-md-12.text-left
     %h4{style: "text-align: left;"} Songs:
     %table.table.table-dark
       %thead
@@ -19,7 +19,7 @@
           %th Name
           %th Album
           %th Duration
-          
+          %th
           
           
 
@@ -32,14 +32,18 @@
                 %td= song.name
                 %td= song.album
                 %td= song.duration
-          
+                %td= link_to 'Remove Song from Playlist', list, method: :delete, data: { confirm: 'Are you sure?' },id: 'linkcolorwhite'
 
 
 .container.bg-light
-  .col-md-10.text-center
+  .col-md-12.text-center
 
     
     %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href =>  edit_playlist_path(@playlist), :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Edit
 
     %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => playlists_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Back
+
+    
+  
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => songs_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "}  Add Song
 

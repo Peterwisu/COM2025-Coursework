@@ -1,10 +1,5 @@
-%head
-  
-  %meta{:charset => "utf-8"}/
-  %meta{:content => "width=device-width, initial-scale=1", :name => "viewport"}/
-  %script{:src => "https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"}
-  %script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"}
 
+%script{:src => "https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"}
 %nav.navbar.navbar-inverse
   .container-fluid
     .navbar-header
@@ -12,32 +7,63 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "/",style: "color: white;"} SUBCULTURE MUSIC
+      %a.navbar-brand{:href => "/",id: 'linkcolorwhite'} SUBCULTURE MUSIC
     #myNavbar.collapse.navbar-collapse
       %ul.nav.navbar-nav.navbar-left
         %li.navbarheader
-          %a{:href => "artists",style: "color: white;"} Artists      
+          
+          = link_to 'Playlist', playlists_path,id: 'linkcolorwhite'
         %li.navbarheader
-          %a{:href => "songs",style: "color: white;"} Songs
+           
+          = link_to 'Artist', artists_path,id: 'linkcolorwhite'
+
         %li.navbarheader
-          %a{:href => "playlists",style: "color: white;"} Playlists
+          
+          = link_to 'Song', songs_path,id: 'linkcolorwhite'
+       
         %li.navbarheader
-          %a{:href => "contact",style: "color: white;"} Contact
+          
+          = link_to 'Contact',contact_path,id: 'linkcolorwhite'
+          
     
       %ul.nav.navbar-nav.navbar-right
         - if user_signed_in?
+          
+            
           %li.navbarheader
             %h4{style: " padding-top: 5px  "}="#{current_user.email}" 
           %li.navbarheader  
-            %a{:href => edit_user_registration_path,style: "color: white;"}Profile  
+            %a{:href => edit_user_registration_path,id: 'linkcolorwhite'}Profile  
           %li.navbarheader
-            = link_to t('logout'), destroy_user_session_path, method: 'delete',style: "color: white;"
+            = link_to t('logout'), destroy_user_session_path, method: 'delete',id: 'linkcolorwhite'
+          %li.navbarheader
+            
+            .btn-group
+              %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                Select Mode
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:onclick => " light()"} Light Mode
+                %li
+                  %a{:onclick => " dark()"} Dark Mode
         - else
           %li.navbarheader
-            %a{:href => new_user_session_path,style: "color: white;"} Login
+            %a{:href => new_user_session_path,id: 'linkcolorwhite'} Login
           %li.navbarheader
-            %a{:href => new_user_registration_path,style: "color: white;"}Sign Up
-  
+            %a{:href => new_user_registration_path,id: 'linkcolorwhite'}Sign Up
+          %li.navbarheader
+            
+            .btn-group
+              %button.btn.btn-default.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :type => "button"}
+                Select Mode
+                %span.caret
+              %ul.dropdown-menu
+                %li
+                  %a{:onclick => " light()"} Light Mode
+                %li
+                  %a{:onclick => " dark()"} Dark Mode
+                
 
 
 

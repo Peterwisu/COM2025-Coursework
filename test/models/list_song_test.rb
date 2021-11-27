@@ -11,7 +11,7 @@ class ListSongTest < ActiveSupport::TestCase
 
 
  
-  test'should not save empty  ' do
+  test'Should not save empty list_song  ' do
 
     my_list = ListSong.new
     my_list.save
@@ -20,7 +20,7 @@ class ListSongTest < ActiveSupport::TestCase
   end
 
 
-  test'save valid  ' do
+  test'Save valid  list_song' do
 
     my_list = ListSong.new
     my_list.playlist_id =@playlist.id

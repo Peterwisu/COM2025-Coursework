@@ -1,9 +1,12 @@
 .container.bg-light
   .col-md-12.text-center
+    .jumbotron.text-center
+      %h1=t('.title') 
+      %p=t('.description') 
     %h1 Artists 
 
 .container.bg-light
-  .col-md-10.text-left
+  .col-md-12.text-left
 
   %table.table.table-dark
     %thead
@@ -23,10 +26,10 @@
           %td= artist.genres
           %td= artist.country
           %td= artist.active
-          %td= link_to 'Add Song', new_song_path(artist_id: artist),style: "color: white;"
-          %td= link_to 'Details', artist,style: "color: white;"
-          %td= link_to 'Edit', edit_artist_path(artist),style: "color: white;"
-          %td= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' },style: "color: white;"
+          %td= link_to 'Add Song', new_song_path(artist_id: artist),id: 'linkcolorwhite'
+          %td= link_to 'Details', artist,id: 'linkcolorwhite'
+          %td= link_to 'Edit', edit_artist_path(artist),id: 'linkcolorwhite'
+          %td= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' },id: 'linkcolorwhite'
 
 %br
 

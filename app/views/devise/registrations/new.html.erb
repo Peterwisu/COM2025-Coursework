@@ -11,7 +11,7 @@
       <div class="field" class="form-group">
         <%= f.label :email,"Email:", class: "col-xl-4 control-label" %><br />
         <div class="col-xl-3">
-          <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+          <%= f.email_field :email,placeholder:"Enter your email", autofocus: true, autocomplete: "email", class: "form-control" %>
         </div>
       </div>
 
@@ -21,14 +21,14 @@
         <em>(<%= @minimum_password_length %> characters minimum)</em>
         <% end %><br />
         <div class="col-xl-3">
-          <%= f.password_field :password, autocomplete: "new-password" , class: "form-control"%>
+          <%= f.password_field :password,placeholder:"Enter your Password", autocomplete: "new-password" , class: "form-control"%>
         </div>
       </div>
 
       <div class="field" class="form-group">
         <%= f.label :password_confirmation , class: "col-xl-4 control-label" %><br />
         <div class="col-xl-6">
-          <%= f.password_field :password_confirmation, autocomplete: "new-password",  class: "form-control" %>
+          <%= f.password_field :password_confirmation, placeholder:"Confirm your password",autocomplete: "new-password",  class: "form-control" %>
           
         </div>
       </div>

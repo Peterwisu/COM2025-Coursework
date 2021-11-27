@@ -11,12 +11,12 @@
   .form-group
     = f.label :name, "Playlist Name:", class: "col-md-4 control-label"
     .col-md-3
-      = f.text_field :name, class: "form-control"
+      = f.text_field :name,placeholder:"Name of a playlist", class: "form-control"
   
   .form-group
     = f.label :created_by, "Create By:", class: "col-md-4 control-label"
     .col-md-3
-      = f.text_field :created_by, class: "form-control"
+      = f.text_field :created_by, placeholder:"Name of creator of playlist",class: "form-control"
  
   .container.bg-light
     .col-md-6.text-center

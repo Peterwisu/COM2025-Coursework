@@ -1,6 +1,6 @@
 
 .container.bg-light
-  .col-md-10.text-center
+  .col-md-12.text-center
     %p
      
       %h1= @artist.name
@@ -19,7 +19,7 @@
 
 
 .container.bg-light
-  .col-md-10.text-left
+  .col-md-12.text-left
     %h4{style: "text-align: left;"} Songs:
     %table.table.table-dark
       %tbody
@@ -31,17 +31,20 @@
           %th 
           %th
           %th 
+          %th 
+          %th 
         - @artist.songs.each do |song|
           %tr
             %td= song.name 
             %td= song.album
             %td= song.duration 
-            %td= link_to 'Details', song,style: "color: white;"
-            %td= link_to 'Edit', edit_song_path(song),style: "color: white;"
-            %td= link_to 'Delete', song , :method => :delete, :data => { :confirm => 'Are you sure?' },style: "color: white;"
+            %td= link_to 'Add to Playlist',new_list_song_path(song_id: song),id: 'linkcolorwhite'
+            %td= link_to 'Details', song,id: 'linkcolorwhite'
+            %td= link_to 'Edit', edit_song_path(song),id: 'linkcolorwhite'
+            %td= link_to 'Delete', song , :method => :delete, :data => { :confirm => 'Are you sure?' },id: 'linkcolorwhite'
 
 .container.bg-light
-  .col-md-10.text-center
+  .col-md-12.text-center
 
     %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href =>  new_song_path(artist_id: @artist), :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Add Song
 

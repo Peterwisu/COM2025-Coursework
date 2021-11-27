@@ -10,7 +10,7 @@
 
       <div class="field" class="form-group"> 
         <%= f.label :email , class: "col-xl-4 control-label"%><br />
-        <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control" %>
+        <%= f.email_field :email, autofocus: true,placeholder:"Your Email", autocomplete: "email", class: "form-control" %>
       </div>
 
       <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
@@ -19,7 +19,7 @@
 
       <div class="field" class="form-group">
         <%= f.label :password , class: "col-xl-4 control-label"%> <i>(leave blank if you don't want to change it)</i><br />
-        <%= f.password_field :password, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password,placeholder:"New Password", autocomplete: "new-password", class: "form-control" %>
         <% if @minimum_password_length %>
           <br />
           <em><%= @minimum_password_length %> characters minimum</em>
@@ -28,12 +28,12 @@
 
       <div class="field" class="form-group">
         <%= f.label :password_confirmation , class: "col-xl-4 control-label"%><br />
-        <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control" %>
+        <%= f.password_field :password_confirmation,placeholder:"Confirm New Password", autocomplete: "new-password", class: "form-control" %>
       </div>
 
       <div class="field" class="form-group">
         <%= f.label :current_password , class: "col-xl-4 control-label"%> <i>(we need your current password to confirm your changes)</i><br />
-        <%= f.password_field :current_password, autocomplete: "current-password", class: "form-control" %>
+        <%= f.password_field :current_password,placeholder:"Your Current Password", autocomplete: "current-password", class: "form-control" %>
       </div>
 
       <div class="actions" class="container bg-light">

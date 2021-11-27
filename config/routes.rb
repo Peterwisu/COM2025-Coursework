@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'home/song'
   get 'home/playlist'
   get 'home/contact'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   #for home pages
@@ -23,8 +24,7 @@ Rails.application.routes.draw do
 
   #for mailer 
   post 'request_contact', to: 'home#request_contact'
-  #route redirected after the submission from contact
-  get 'mailsend', to: "home#mailsend"
+ 
   #for add song to playlist
   
 

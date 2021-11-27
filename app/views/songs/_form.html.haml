@@ -15,15 +15,15 @@
   .form-group
     = f.label :name, "Name:", class: "col-md-4 control-label"
     .col-md-3
-      = f.text_field :name, class: "form-control"
+      = f.text_field :name, placeholder:"Name of a song",class: "form-control"
   .form-group
     = f.label :album, "Album:", class: "col-md-4 control-label"
     .col-md-3
-      = f.text_field :album, class: "form-control"
+      = f.text_field :album, placeholder:"Name of an album",class: "form-control"
   .form-group
     = f.label :duration, "Duration:", class: "col-md-4 control-label"
     .col-md-3
-      = f.text_field :duration, class: "form-control"
+      = f.text_field :duration,placeholder:"Duration of song", class: "form-control"
   
   .container.bg-light
     .col-md-6.text-center

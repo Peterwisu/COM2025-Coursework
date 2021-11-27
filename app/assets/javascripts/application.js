@@ -12,9 +12,43 @@
 //
 //= require jquery3
 //= require jquery_ujs
+//= require jquery.validate
 //= require activestorage
 //= require turbolinks
 //= require_tree .
 
 
 // Thumbnail image controls
+
+$( document ).ready(function() {
+   
+
+});
+function dark(){
+  
+    var element = document.body;    
+            
+    element.classList.remove("body-dark"); 
+    
+    var tags = document.querySelectorAll('*[id^="linkcolorwhite"]');
+    
+        for (var i = 0; i < tags.length; i++) {
+        
+            tags.item(i).style.color= "white";
+        }
+}
+
+
+function light(){
+   
+        var element = document.body;    
+               
+        element.classList.add("body-dark"); 
+        
+        var tags = document.querySelectorAll('*[id^="linkcolorwhite"]');
+        
+            for (var i = 0; i < tags.length; i++) {
+            
+                tags.item(i).style.color= "black";
+            }
+}

@@ -16,7 +16,7 @@
   .form-group
     = f.label :song, "Song:", class: "col-md-4 control-label"
     .col-md-3
-      %p=@list_song.song.name
+      %h4=@list_song.song.name 
       = f.hidden_field :song_id, value: @list_song.song.id
   .container.bg-light
     .col-md-6.text-center

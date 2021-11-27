@@ -48,6 +48,6 @@ class ListSongsControllerTest < ActionDispatch::IntegrationTest
       delete list_song_url(@list_song)
     end
 
-    assert_redirected_to list_songs_url
+    assert_redirected_to playlist_path(@list_song.playlist_id)
   end
 end

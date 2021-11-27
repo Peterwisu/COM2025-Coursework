@@ -8,14 +8,14 @@ class ArtistTest < ActiveSupport::TestCase
   setup do
     @user = users(:one)
     end
-  test 'empty can not be save' do
+  test 'Empty artist can not be save' do
     my_artist= Artist.new
     my_artist.save
 
     refute my_artist.valid?
   end 
   
-  test 'save valid' do
+  test 'Save valid artist' do
     my_artist= Artist.new
     my_artist.name = 'BMTH'
     my_artist.genres = 'heavy metal'
@@ -27,7 +27,7 @@ class ArtistTest < ActiveSupport::TestCase
     assert my_artist.valid?
   end
 
-  test 'duplicate should not be save' do
+  test 'Duplicate  artist should not be save' do
     my_artist1= Artist.new
     my_artist1.name = 'BMTH'
     my_artist1.genres = 'heavy metal'

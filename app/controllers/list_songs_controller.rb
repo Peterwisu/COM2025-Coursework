@@ -2,24 +2,27 @@ class ListSongsController < ApplicationController
   before_action :set_list_song, only: %i[ show edit update destroy ]
   before_action :set_song , only: [:new, :create]
   before_action :authenticate_user!
+   # # # # # # # # # # # # # # # #
   # GET /list_songs or /list_songs.json
-  def index
+   #def index
     
-    @list_songs = ListSong.user_list_songs(current_user)
-  end
-
+    #@list_songs = ListSong.user_list_songs(current_user)
+ #  end
+ # # # # # # # # # # # #
   # GET /list_songs/1 or /list_songs/1.json
-  def show
-  end
+   # #def show
+   # #end
 
   # GET /list_songs/new
   def new
     @list_song = @song.list_song.new
   end
 
+
+   # # # # # # # # # # # # # # # # # #
   # GET /list_songs/1/edit
-  def edit
-  end
+  # # def edit
+  # end
 
   # POST /list_songs or /list_songs.json
   def create
@@ -37,23 +40,23 @@ class ListSongsController < ApplicationController
   end
 
   # PATCH/PUT /list_songs/1 or /list_songs/1.json
-  def update
-    respond_to do |format|
-      if @list_song.update(list_song_params)
-        format.html { redirect_to @list_song, notice: "List song was successfully updated." }
-        format.json { render :show, status: :ok, location: @list_song }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @list_song.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+  #def update
+   # respond_to do |format|
+    #  if @list_song.update(list_song_params)
+    #    format.html { redirect_to @list_song, notice: "List song was successfully updated." }
+    #    format.json { render :show, status: :ok, location: @list_song }
+    #  else
+    #    format.html { render :edit, status: :unprocessable_entity }
+     #   format.json { render json: @list_song.errors, status: :unprocessable_entity }
+    #  end
+   # end
+  #end
 
   # DELETE /list_songs/1 or /list_songs/1.json
   def destroy
     @list_song.destroy
     respond_to do |format|
-      format.html { redirect_to list_songs_url, notice: "List song was successfully destroyed." }
+      format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "List song was successfully destroyed." }
       format.json { head :no_content }
     end
   end
