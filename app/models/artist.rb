@@ -8,7 +8,7 @@ class Artist < ApplicationRecord
     validates :genres, presence: true
     validates :country, presence: true
     validates :active, presence: true
-    validates :name, uniqueness: true
+    validates :name, uniqueness: { scope: :user_id }
     #scope artist to a user ,user only see artist that they create
     scope :user_artists, ->(user) { where(['user_id = ?', user.id]) }
 end

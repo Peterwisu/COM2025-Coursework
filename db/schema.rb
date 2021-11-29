@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_224151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
-    t.index ["name"], name: "index_artists_on_name", unique: true
+    t.index ["name", "user_id"], name: "index_artists_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_artists_on_user_id"
   end
 
@@ -39,7 +39,7 @@ ActiveRecord::Schema.define(version: 2021_11_25_224151) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false
-    t.index ["name", "created_by"], name: "index_playlists_on_name_and_created_by", unique: true
+    t.index ["name", "created_by", "user_id"], name: "index_playlists_on_name_and_created_by_and_user_id", unique: true
     t.index ["user_id"], name: "index_playlists_on_user_id"
   end
 

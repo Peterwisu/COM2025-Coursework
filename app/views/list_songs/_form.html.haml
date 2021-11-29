@@ -11,7 +11,8 @@
   .form-group
     = f.label :playlist, "Playlist Name:", class: "col-md-4 control-label"
     .col-md-3
-      = f.collection_select :playlist_id, Playlist.all, :id, :name, {}, class: "form-control"
+    
+      = f.collection_select :playlist_id,Playlist.user_playlists(current_user), :id, :name, {}, class: "form-control"
   
   .form-group
     = f.label :song, "Song:", class: "col-md-4 control-label"

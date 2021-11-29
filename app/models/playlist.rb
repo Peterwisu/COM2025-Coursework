@@ -6,7 +6,7 @@ class Playlist < ApplicationRecord
     # check presence
     validates  :name , :created_by ,presence: true
     # check uniqueness of name along with created_by as a composite primary keys
-    validates  :name , uniqueness: { scope: :created_by}
+    validates  :name , uniqueness: { scope:[ :created_by , :user_id]}
     # scope artist to a user ,user only see artist that they create
     scope :user_playlists, ->(user) { where(['user_id = ?', user.id]) }
 end
