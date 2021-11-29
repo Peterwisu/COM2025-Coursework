@@ -22,12 +22,14 @@
     = csrf_meta_tags
 
   %body
-    
+    //use partial header
     = render 'shared/header'
+    //flash notice
     - flash.each do |key, value|
       = content_tag :div, content_tag(:p, value), id: "#{key}" unless value.blank?
+  
     = yield
-    
+    //use partial footer
     = render 'shared/footer'
 
     

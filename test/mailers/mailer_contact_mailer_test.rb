@@ -4,6 +4,7 @@ class MailerContactMailerTest < ActionMailer::TestCase
   # test "the truth" do
   #   assert true
   # end
+  #Test to check a mailer 
   test "should return contact email" do
     mail = MailerContactMailer.contact_email("test@rails.com",
     "Ruby Rails", "1234567890", @message = "Test Ruby on Rails Mailer")

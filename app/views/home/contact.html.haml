@@ -35,41 +35,6 @@
         .col-md-11.text-center
           = submit_tag t('.submit'),id:"contact_submit", class: "btn btn-default btn-primary" ,style: " border: none; background-color: #000000 ; color: #FFFFFF;"
 :javascript
-  $(document).ready(function(){
-      $("#contact_form").validate({
-          debug: true,
-          
-          rules:{
-              name:{
-                  required: true
-              },
-              email:{
-                  required: true
-              },
-              telephone:{
-                  required: true
-              },
-              message:{
-                  required: true
-              }
-          },
-          messages:{
-              name:{
-                  required: "Name is required.Please fill your name"
-              },
-              email:{
-                  required: "Email is required.Please fill your email"
-              },
-              telephone:{
-                  required: "Phone number is required.Please fill your phone Number"
-              },
-              message:{
-                  required: "Please Fill your message"
-              }
-  
-          },
-          
-          });
-     
-  
+  $(document).ready(function() {
+    validatecontact();
   })

@@ -5,16 +5,19 @@ class ArtistTest < ActiveSupport::TestCase
   #   assert true
   # end
 
+  #create a global variable and retrieve value from fixture
   setup do
     @user = users(:one)
     end
+
+  #Test to check an Artist with null value on fields is unvalid and can not be saved
   test 'Empty artist can not be save' do
     my_artist= Artist.new
     my_artist.save
 
     refute my_artist.valid?
   end 
-  
+  #Test to check an Artist with correct type and value on fields is valid and can be saved
   test 'Save valid artist' do
     my_artist= Artist.new
     my_artist.name = 'BMTH'
@@ -26,7 +29,7 @@ class ArtistTest < ActiveSupport::TestCase
 
     assert my_artist.valid?
   end
-
+  #Test to check an  two Artist with duplicate value on primary keys is unvalid and can not be saved
   test 'Duplicate  artist should not be save' do
     my_artist1= Artist.new
     my_artist1.name = 'BMTH'

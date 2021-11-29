@@ -27,7 +27,7 @@ class SongsController < ApplicationController
 
     respond_to do |format|
       if @song.save
-        format.html { redirect_to artist_path(@song.artist), notice: "Song was successfully created." }
+        format.html { redirect_to artist_path(@song.artist), notice: "You have added a song: "+@song.name + ' from ' + @song.artist.name}
         format.json { render :show, status: :created, location: @song }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -40,7 +40,7 @@ class SongsController < ApplicationController
   def update
     respond_to do |format|
       if @song.update(song_params)
-        format.html { redirect_to @song, notice: "Song was successfully updated." }
+        format.html { redirect_to @song, notice: "You have updated song "+ @song.name }
         format.json { render :show, status: :ok, location: @song }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -53,7 +53,7 @@ class SongsController < ApplicationController
   def destroy
     @song.destroy
     respond_to do |format|
-      format.html { redirect_to songs_url, notice: "Song was successfully destroyed." }
+      format.html { redirect_to songs_url, notice: "You have deleted song: "+@song.name }
       format.json { head :no_content }
     end
   end

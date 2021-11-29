@@ -1,14 +1,7 @@
 class HomeController < ApplicationController
   def home
   end
-
-  def song 
-  end
-
-  def playlist
-  end
-
-  def artist
+  def about
   end
 
   def contact
@@ -25,7 +18,7 @@ class HomeController < ApplicationController
       MailerContactMailer.contact_email(email, name, telephone, message).deliver_now
       flash[:notice] = I18n.t('home.request_contact.email_sent')
     end
-    redirect_to home_contact_path
+    redirect_to contact_path
     end
 
 end

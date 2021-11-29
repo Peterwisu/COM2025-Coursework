@@ -2,6 +2,7 @@ require 'test_helper'
 
 class PlaylistsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
+ #create a global variable and retrieve value from fixture
   setup do
     @playlist = playlists(:one)
     @user = users(:one)

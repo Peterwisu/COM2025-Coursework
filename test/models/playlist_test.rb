@@ -4,11 +4,12 @@ class PlaylistTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
+  #create a global variable and retrieve value from fixture
   setup do
     @user = users(:one)
     end
   
-
+  #Test to check an playlist with null value on fields is unvalid and can not be saved
   test'Should not save empty playlist ' do
 
     my_playlist =Playlist.new
@@ -17,7 +18,7 @@ class PlaylistTest < ActiveSupport::TestCase
     
   end
 
-
+  #Test to check an playlist with correct type and value on fields is valid and can  be saved
   test'Save valid playlist ' do
 
     my_playlist =Playlist.new
@@ -29,6 +30,7 @@ class PlaylistTest < ActiveSupport::TestCase
     assert my_playlist.valid?
     
   end
+  #Test to check an list_songs with duplicate value on primary is unvalid and can not be saved
   test 'Duplicate playlist should not save' do
 
     my_playlist1 =Playlist.new

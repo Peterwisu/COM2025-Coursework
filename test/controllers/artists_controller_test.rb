@@ -2,6 +2,7 @@ require 'test_helper'
 
 class ArtistsControllerTest < ActionDispatch::IntegrationTest
   include Devise::Test::IntegrationHelpers
+  #create a global variable and retrieve value from fixture
   setup do
     @artist = artists(:one)
     @user = users(:one)

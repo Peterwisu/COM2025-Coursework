@@ -30,7 +30,7 @@ class ListSongsController < ApplicationController
 
     respond_to do |format|
       if @list_song.save
-        format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "List song was successfully created." }
+        format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "You have added a song:"+ @list_song.song.name + ' to a playlist: '+@list_song.playlist.name }
         format.json { render :show, status: :created, location: @list_song }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -56,7 +56,7 @@ class ListSongsController < ApplicationController
   def destroy
     @list_song.destroy
     respond_to do |format|
-      format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "List song was successfully destroyed." }
+      format.html { redirect_to playlist_path(@list_song.playlist_id), notice: "You have removed a song:"+ @list_song.song.name + ' from a playlist: '+@list_song.playlist.name }
       format.json { head :no_content }
     end
   end

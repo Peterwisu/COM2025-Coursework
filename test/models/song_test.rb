@@ -4,11 +4,11 @@ class SongTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end
-
+  #create a global variable and retrieve value from fixture
   setup do
     @artist = artists(:one)
   end
-
+  #Test to check an Songs with null value on fields is unvalid and can not be saved
   test'Should not save empty song ' do
 
     my_song = Song.new
@@ -17,7 +17,7 @@ class SongTest < ActiveSupport::TestCase
     
   end
 
-
+  #Test to check an Song with correct and type value on fields is valid and can be saved
   test'Save valid song ' do
 
     my_song = Song.new
@@ -30,7 +30,7 @@ class SongTest < ActiveSupport::TestCase
     assert my_song.valid?
     
   end
-
+  #Test to check an Songs with duplicate value on primary keys is unvalid and can not be saved
   test 'Duplicate song should not be save' do
     my_song1 = Song.new
     my_song1.name = 'School'
