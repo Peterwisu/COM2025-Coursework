@@ -34,6 +34,7 @@
       .container.bg-light
         .col-md-11.text-center
           = submit_tag t('.submit'),id:"contact_submit", class: "btn btn-default btn-primary" ,style: " border: none; background-color: #000000 ; color: #FFFFFF;"
+//Call javascript function to validate form
 :javascript
   $(document).ready(function() {
     validatecontact();

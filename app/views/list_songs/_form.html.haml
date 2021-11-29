@@ -11,13 +11,15 @@
   .form-group
     = f.label :playlist, "Playlist Name:", class: "col-md-4 control-label"
     .col-md-3
-    
+      //Playlist.user_playlists(current_user) is to let user select only playlist that belong this current user 
       = f.collection_select :playlist_id,Playlist.user_playlists(current_user), :id, :name, {}, class: "form-control"
   
   .form-group
     = f.label :song, "Song:", class: "col-md-4 control-label"
     .col-md-3
+      //display a song name
       %h4=@list_song.song.name 
+      //assign a value 
       = f.hidden_field :song_id, value: @list_song.song.id
   .container.bg-light
     .col-md-6.text-center

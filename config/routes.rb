@@ -12,17 +12,8 @@ Rails.application.routes.draw do
   #set a route for contact and about
   get 'contact', to: 'home#contact'
   get 'about', to: 'home#about'
-  #set a path for mailer
+  #set a path for mailer through post method
   post 'request_contact', to: 'home#request_contact'
-
-
-
-
-
-
-
-
-
 
 
 end
