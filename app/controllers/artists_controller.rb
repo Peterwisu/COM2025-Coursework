@@ -1,9 +1,11 @@
 class ArtistsController < ApplicationController
   before_action :set_artist, only: %i[ show edit update destroy ]
+  before_action :authenticate_user!
 
   # GET /artists or /artists.json
   def index
-    @artists = Artist.all
+    
+    @artists = Artist.user_artists(current_user)
   end
 
   # GET /artists/1 or /artists/1.json
@@ -21,11 +23,12 @@ class ArtistsController < ApplicationController
 
   # POST /artists or /artists.json
   def create
-    @artist = Artist.new(artist_params)
+    @artist = Artist.new(artist_params)    
+    @artist.user = current_user
 
     respond_to do |format|
       if @artist.save
-        format.html { redirect_to @artist, notice: "Artist was successfully created." }
+        format.html { redirect_to @artist, notice: "You have added an Artist: "+ @artist.name  }
         format.json { render :show, status: :created, location: @artist }
       else
         format.html { render :new, status: :unprocessable_entity }
@@ -38,7 +41,7 @@ class ArtistsController < ApplicationController
   def update
     respond_to do |format|
       if @artist.update(artist_params)
-        format.html { redirect_to @artist, notice: "Artist was successfully updated." }
+        format.html { redirect_to @artist, notice: "You have edited an Artist: "+ @artist.name  }
         format.json { render :show, status: :ok, location: @artist }
       else
         format.html { render :edit, status: :unprocessable_entity }
@@ -51,7 +54,7 @@ class ArtistsController < ApplicationController
   def destroy
     @artist.destroy
     respond_to do |format|
-      format.html { redirect_to artists_url, notice: "Artist was successfully destroyed." }
+      format.html { redirect_to artists_url, notice: "You have deleted an Artist: "+ @artist.name }
       format.json { head :no_content }
       
     end

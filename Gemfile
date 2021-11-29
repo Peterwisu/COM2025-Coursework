@@ -52,14 +52,31 @@ group :test do
   gem 'capybara', '>= 2.15'
   gem 'selenium-webdriver'
   # Easy installation and use of chromedriver to run system tests with Chrome
-  gem 'chromedriver-helper'
+  #gem 'chromedriver-helper'
+  gem 'webdrivers'
 end
 
+
+
+
+#provides Haml generators for an application
 gem 'haml-rails'
+#add bootstrap framework for a application stylesheet
 gem 'bootstrap-sass', '~> 3.4.1'
+#allowing you to use CSS3 & HTML5 while maintaining control over unsupported browsers.
 gem 'modernizr-rails'
+#add jquery to a application
 gem 'jquery-rails'
+#add jquery validation plugin which help in validation a form in front end
+gem 'jquery-validation-rails'
+#add assigns to your controller tests as well as assert_template to both controller and integration tests.
 gem 'rails-controller-testing'
+#add devise for user authentication
+gem 'devise'
+#add list of a country for a user to select a country in a form
+gem 'country_select','~> 6.0' ,require: 'country_select_without_sort_alphabetical'
+
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]

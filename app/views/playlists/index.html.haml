@@ -1,0 +1,37 @@
+
+.container.bg-light
+  .col-md-12.text-center
+    .jumbotron.text-center
+      %h1=t('.title') 
+      %p=t('.description') 
+    %h1 Playlist
+
+
+    %table.table.table-dark
+      %thead
+        %tr
+          %th Name
+          %th Created by
+          %th
+          %th
+          %th
+          %th
+
+      %tbody
+        - @playlists.each do |playlist|
+          %tr
+            %td= playlist.name
+            %td= playlist.created_by
+            %td= link_to 'Add Song', songs_path      ,id: 'linkcolorwhite' 
+            %td= link_to 'Details', playlist,id: 'linkcolorwhite'
+            %td= link_to 'Edit', edit_playlist_path(playlist),id: 'linkcolorwhite'
+            %td= link_to 'Delete', playlist, method: :delete, data: { confirm: 'Are you sure?' },id: 'linkcolorwhite'
+          
+        
+
+        
+%br
+
+.container
+  .col-md-12.text-center
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => new_playlist_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} New Playlist

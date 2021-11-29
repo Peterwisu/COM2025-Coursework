@@ -1,0 +1,23 @@
+
+
+
+= form_for @playlist, :html => {:class => "form-horizontal center"} do |f|
+  - if @playlist.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@playlist.errors.count, "error")} prohibited this playlist from being saved:"
+      %ul
+        - @playlist.errors.full_messages.each do |message|
+          %li= message
+  .form-group
+    = f.label :name, "Playlist Name:", class: "col-md-4 control-label"
+    .col-md-3
+      = f.text_field :name,placeholder:"Name of a playlist", class: "form-control"
+  
+  .form-group
+    = f.label :created_by, "Create By:", class: "col-md-4 control-label"
+    .col-md-3
+      = f.text_field :created_by, placeholder:"Name of creator of playlist",class: "form-control"
+ 
+  .container.bg-light
+    .col-md-6.text-center
+      = f.submit "Save", class: "btn btn-default btn-primary" ,style: " border: none; background-color: #000000 ; color: #FFFFFF;"

@@ -1,29 +1,39 @@
-%h1 Listing artists
+.container.bg-light
+  .col-md-12.text-center
+    .jumbotron.text-center
+      %h1=t('.title')
+      %p=t('.description')
+    %h1 Artists
 
-%table
-  %thead
-    %tr
-      %th Name
-      %th Genres
-      %th Country
-      %th Active
-      %th
-      %th
-      %th
+.container.bg-light
+  .col-md-12.text-left
 
-  %tbody
-    - @artists.each do |artist|
+  %table.table.table-dark
+    %thead
       %tr
-        %td= artist.name
-        %td= artist.genres
-        %td= artist.country
-        %td= artist.active
-        %td= link_to 'Show', artist
-        %td= link_to 'Edit', edit_artist_path(artist)
-        %td= link_to 'Destroy', artist, method: :delete, data: { confirm: 'Are you sure?' }
+        %th Name
+        %th Genres
+        %th Country
+        %th Active
+        %th
+        %th
+        %th
+
+    %tbody
+      - @artists.each do |artist|
+        %tr
+          %td= artist.name
+          %td= artist.genres
+          %td= artist.country
+          %td= artist.active
+          %td= link_to 'Add Song', new_song_path(artist_id: artist),id: 'linkcolorwhite'
+          %td= link_to 'Details', artist,id: 'linkcolorwhite'
+          %td= link_to 'Edit', edit_artist_path(artist),id: 'linkcolorwhite'
+          %td= link_to 'Delete', artist, method: :delete, data: { confirm: 'Are you sure?' },id: 'linkcolorwhite'
 
 %br
 
-= link_to 'New Artist', new_artist_path
 
-
+.container
+  .col-md-12.text-center
+    %a.btn.btn-secondary.btn-lg.active{"aria-pressed" => "true", :href => new_artist_path, :role => "button",:style => " background-color: #000000 ; color: #FFFFFF; "} Add New Artist

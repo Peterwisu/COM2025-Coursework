@@ -38,7 +38,9 @@ en:
       title: Welcome to SUBCULTURE MUSIC
       description: This is a webiste for people who love and interesting in Rock music.This site contains and shared various song and playlist of a rock artist from all over the world.
 
-
+    about:
+      title:  About This Website
+      description: This is website is a project for COM2025 Web Applications Development 2021/2022 Coursework from Wish Suharitdamrong.To develop an interactive web application using Ruby on rails.
     contact:
       title: Contact Us
       description: Fill the form below to contact us
@@ -56,4 +58,20 @@ en:
       
     request_contact:
       no_email: You must supply an email address
-      email_sent: Thank you. We will be in touch shortly.
+      email_sent: Thank you for your. We will be in touch shortly.
+  
+      
+  playlists:
+    index: 
+      title: Get Start
+      description: Create your own playlist,add your favourite artist and add song to the playlist
+  
+  artists:
+    index:
+      title: Add a Song from your favourite Artists
+      description: If an Artist does not exist in the list below you can add an Artist by click a button below
+  
+  songs:
+    index:
+      title: Add song to your Playlists
+      description: If a song does not exist in the list below you can add a new Song by click a button below
