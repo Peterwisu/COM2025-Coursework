@@ -62,10 +62,6 @@ function light(){
             //change a font color
             tags.item(i).style.color= "black";
         }
-
-
-
-
 }
 
 //Change a theme of a web page to dark theme
