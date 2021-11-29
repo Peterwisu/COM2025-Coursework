@@ -19,7 +19,7 @@
 
 
 
-
+//make a function available after the document is loaded
 $(document).ready(function() {
     
     validatecontact();
