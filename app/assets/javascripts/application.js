@@ -14,7 +14,7 @@
 //= require jquery_ujs
 //= require jquery.validate
 //= require activestorage
-//= require turbolinks
+
 //= require_tree .
 
 

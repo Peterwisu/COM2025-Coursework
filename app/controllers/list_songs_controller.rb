@@ -3,15 +3,8 @@ class ListSongsController < ApplicationController
   before_action :set_song , only: [:new, :create]
   before_action :authenticate_user!
    # # # # # # # # # # # # # # # #
-  # GET /list_songs or /list_songs.json
-  def index
-    
-    @list_songs = ListSong.user_list_songs(current_user)
- end
- # # # # # # # # # # # #
-  # GET /list_songs/1 or /list_songs/1.json
-  def show
-  end
+
+ 
 
   # GET /list_songs/new
   def new
@@ -19,10 +12,7 @@ class ListSongsController < ApplicationController
   end
 
 
-   # # # # # # # # # # # # # # # # # #
-  # GET /list_songs/1/edit
-  def edit
-  end
+
 
   # POST /list_songs or /list_songs.json
   def create
@@ -39,18 +29,7 @@ class ListSongsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /list_songs/1 or /list_songs/1.json
-  def update
-    respond_to do |format|
-      if @list_song.update(list_song_params)
-        format.html { redirect_to @list_song, notice: "List song was successfully updated." }
-        format.json { render :show, status: :ok, location: @list_song }
-      else
-        format.html { render :edit, status: :unprocessable_entity }
-        format.json { render json: @list_song.errors, status: :unprocessable_entity }
-      end
-    end
-  end
+
 
   # DELETE /list_songs/1 or /list_songs/1.json
   def destroy

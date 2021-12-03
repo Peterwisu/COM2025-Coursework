@@ -22,10 +22,13 @@
           %th
           
           
-
+      //display a songs that belongs to a playlist
       %tbody
+        //run loop through all list_songs
         - @playlist.list_song.each do |list|
+          //run loop through all songs
           - @songs.each  do |song| 
+            //check if song id from list_songs is same from song
             - if list.song_id == song.id
               %tr
                 %td= song.artist.name
