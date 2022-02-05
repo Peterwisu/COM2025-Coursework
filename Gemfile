@@ -76,7 +76,7 @@ gem 'devise'
 #add list of a country for a user to select a country in a form
 gem 'country_select','~> 6.0' ,require: 'country_select_without_sort_alphabetical'
 
-
+gem 'rails_12factor', group: :production
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
